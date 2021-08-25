@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) { //Tem que estabelecer os parâmetros. No caso, "peso" e "altura".
+
+        var imc = peso / (altura * altura);
+        return imc; //Esta parte indica que as variáveis imc João e Fulano devem ser calculadas e devolvidas ao sistema.
+    }
+
+  var imcJoao = calculaImc(90, 1.74); //Estas duas linhas recebem o valor de "return".
+  var imcFulano = calculaImc(68, 1.72);
+
+    mostra("O imc de João é " + imcJoao);
+    mostra("O imc de Fulano é " + imcFulano);
+</script>

@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+        //posições: 0  1   2  3
+    var segredos = [5, 7, 10, 2]; /*Para selecionar um item do [], é preciso indicar sua posição — começando em 0. Então, para este caso, as posições de 5, 7, 10 e 2 são 0, 1, 2, 3; respectivamente.*/
+
+    var input = document.querySelector("input"); 
+    input.focus();
+
+    function verifica(){
+
+        var achou = false;
+        for(var posicao = 0; posicao < segredos.length; posicao++){  //O "lengh" vai atualizar de   acordo com o número de arrays.
+    
+            if(input.value == segredos[posicao]) {
+                alert("Você acertou!");
+                achou = true;
+                break;
+            }
+    }
+
+    if(achou == false){
+        alert("Você errou!");
+    }
+    input.value = "";
+    input.focus();
+}
+
+var button = document.querySelector("button");
+button.onclick = verifica; //Não se usa "()" para não chamar a função de imediato. Da maneira como está, a função só será chamada quando se executar a ação de clicar no botão.
+</script>

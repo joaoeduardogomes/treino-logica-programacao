@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha(){
+	document.write("<br>");
+	document.write("<br><br>");
+} /*Funções devem ser detemrinadas nas primeiras linhas. E devem, preferencialmente, terem nomes de verbo; como "grita", "corre", "ataca" etc. E ela pode ter outras instruções juntas, como document.write e alert*/
+
+function mostra(mensagem) {		//É preciso declarar um nome, no caso, "mensagem", para que o código importe a mensagem inserida no 									"mostra" ao longo do código
+	document.write(mensagem); //O nome escolhido acima deve ser o mesmo inserido aqui.
+	pulaLinha(); //Uma função pode chamar outra função nas suas instruções. Isso poupa que se escreva "pulaLinha" em várias partes 					do código.
+}
+
+var ano = 2021;
+
+
+//document.write("João tem " + (ano - 1993) + " anos");
+mostra("João tem " + (ano - 1993) + " anos");
+
+pulaLinha();
+
+//document.write("Luciano tem " + (ano - 1991) + " anos");
+mostra("Luciano tem " + (ano - 1991) + " anos");
+
+pulaLinha();
+
+//document.write("Angelo tem " + (ano - 1990) + " anos");
+mostra("Angelo tem " + (ano - 1990) + " anos");
+
+pulaLinha();
+
+ano = 2022; /*A partir daqui, a variável muda*/
+//document.write("No próximo ano, João terá " + (ano - 1993) + " anos");
+mostra("No próximo ano, João terá " + (ano - 1993) + " anos");
+
+mostra(); //Se não escrever nada nos parênteses, ele imprime como "indefinido".
+</script>

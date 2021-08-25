@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    for(var linha = 1; linha <= 3; linha++) { //este for é para criar 3 linhas de *
+
+        for (coluna = 1; coluna <= 10; coluna++) { //este for é para imprimir o número desejado de *
+            document.write("*");
+        }
+
+        pulaLinha(); //não esquecer do ()
+
+    }
+
+</script>

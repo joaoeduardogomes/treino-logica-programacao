@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) { //Tem que estabelecer os parâmetros. No caso, "peso" e "altura".
+
+        return peso / (altura * altura); 
+} 
+
+    var nome = prompt("Informe seu nome: ");
+    var pesoInformado = prompt(nome + ", Informe seu peso: "); 
+    var alturaInformada = prompt(nome + ",Informe sua altura: ");
+    var imc = calculaImc(pesoInformado, alturaInformada);
+
+    mostra(nome + ", o seu IMC é " + imc);
+
+    if(imc < 18.5){
+        mostra("Você está abaixo do recomendado.");
+    }
+
+    if(imc > 35){
+        mostra("Você está acima do recomendado.");
+    }
+
+    if(imc >= 18.5 && imc <= 35){ //O && atribui outra condição. As duas devem ser verdadeiras para concluir a ação
+        mostra("Você está dentro da média.");
+    }
+
+
+    /*Também é poddível fazer, para a terceira opção:
+    if(imc >= 18.5){
+        if(imc <= 35){ 
+            mostra("Você está dentro da média.");}
+    }*/
+</script>

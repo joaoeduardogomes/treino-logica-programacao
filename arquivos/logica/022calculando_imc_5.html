@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura) { //Tem que estabelecer os parâmetros. No caso, "peso" e "altura".
+
+        return peso / (altura * altura); //Dá no mesmo eliminar a variável imc e colocar o cálculo direto no return.
+    }   //É melhor definir fora da função o que fazer com os dados: se calcular, mostrar na tela, mandar-email, guardar num banco de dados etc.
+
+    var imcJoao = calculaImc(90, 1.74); //Estas duas linhas recebem o valor de "return".
+    var imcFulano = calculaImc(68, 1.72);
+    var imcSoma = imcJoao + imcFulano;
+
+    mostra("O imc de João é " + imcJoao);
+    mostra("O imc de Fulano é " + imcFulano);
+    mostra("A soma dos IMCs é: " + imcSoma)
+</script>

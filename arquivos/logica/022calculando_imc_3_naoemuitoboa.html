@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(texto) {
+
+        document.write(texto);
+        pulaLinha();
+    }
+
+    function calculaImc(pesoJoao, alturaJoao, pesoFulano, alturaFulano) { //Tem que estabelecer os parâmetros. No caso, "peso" e "altura".
+
+        var imcJoao = pesoJoao / (alturaJoao*alturaJoao);
+        var imcFulano = pesoFulano / (alturaFulano*alturaFulano);
+        var somaImc = imcJoao+imcFulano
+        mostra("A soma dos IMCs calculados é " + somaImc);
+    }
+
+    calculaImc(90, 1.74, 68, 1.72);
+
+</script>

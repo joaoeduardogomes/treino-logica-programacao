@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+
+function pulaLinha() {
+
+document.write("<br><br>");
+}
+
+function mostra(frase) {
+
+document.write(frase);
+pulaLinha();
+}
+
+var num = parseInt(prompt("Informe um número para imprimir sua tabuada"));
+
+for(var multiplicador = 1; multiplicador <= 10; multiplicador++){
+    var resultado = num * multiplicador;
+    mostra(num + " vezes " + multiplicador + " é igual a " + resultado);   
+}
+
+
+</script>

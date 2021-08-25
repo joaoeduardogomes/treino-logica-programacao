@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var anoCopa = 1930;
+
+    var anoCopaTemp = anoCopa;
+
+    var limite = parseInt(prompt("Informe o ano limite: "));
+
+    var contagem = 0;
+
+    if (limite >= 1930){
+        while(anoCopaTemp <= limite){
+            mostra("Teve copa em " + anoCopaTemp);
+            anoCopaTemp = anoCopaTemp + 4;
+            contagem++;
+        }
+        
+        mostra("No total, houve " + contagem + " copas do mundo no intervalo entre " + anoCopa + " e " + limite);
+    }
+
+    else
+    mostra("No ano informado ainda não havia Copa do Mundo.")
+    
+</script>
