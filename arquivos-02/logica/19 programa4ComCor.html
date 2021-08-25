@@ -1,0 +1,45 @@
+<html>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+        pincel.fillStyle = "lightgray";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function desenhaCirculo(x, y, raio) {
+            pincel.fillStyle = cores[indiceCorAtual];
+            pincel.beginPath();
+            pincel.arc(x, y, raio, 0, 2 * Math.PI)
+            pincel.fill();
+        }
+
+        function limpaTela() {
+            pincel.clearRect(0, 0, 600, 400);
+        }
+
+        var cores = ['blue', 'red', 'green', 'brown', 'gray']
+        var indiceCorAtual = 0;
+
+        function mudaCor() {
+    
+        indiceCorAtual++;
+
+        if(indiceCorAtual >= cores.length) {
+        indiceCorAtual = 0; // volta para a primeira cor, azul, quando o valor da cor atual for incrementado até 2 (o máximo)
+        }
+    }
+
+        var x = 20;
+
+        function atualizaTela() {
+            limpaTela();
+            desenhaCirculo(x, 20, 10);
+            x++;
+        }
+
+
+        setInterval(atualizaTela, 10);
+        setInterval(mudaCor, 200); //Ela deve ser chamada fora da função de atualização.
+    </script>
+</html>

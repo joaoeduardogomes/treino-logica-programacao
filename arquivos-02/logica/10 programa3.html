@@ -1,0 +1,19 @@
+<html>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector("canvas");
+        var pincel = tela.getContext("2d");
+
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0, 0, 600, 400);
+
+        function exibeAlerta(evento) {
+            var x = evento.pageX - tela.offsetLeft; //desconsidera a margem à esquerda
+            var y = evento.pageY - tela.offsetTop; //desconsidera a margem acima
+            alert("Coordenada: " + x + "," + y);
+        }
+
+        tela.onclick = exibeAlerta; //o navegador vai chamar a função
+    </script>
+</html>

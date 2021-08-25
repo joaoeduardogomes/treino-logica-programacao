@@ -1,0 +1,67 @@
+<html>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var x = 20;
+    var y = 20;
+
+    var mais = 107;
+    var menos = 109;
+
+    var taxa = 10;
+
+    var raio = 20;
+    var tamanho = 0;
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function limpaTela() {
+
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function atualizaTela() {
+
+        limpaTela();
+        desenhaCirculo(300, 200, raio);
+    }
+
+    setInterval(atualizaTela, 20);
+
+    function leDoTeclado (evento) {
+        if(evento.keyCode == mais) {
+        raio = raio + taxa;
+        } 
+
+        if (evento.keyCode == menos) {
+            raio = raio - taxa;
+        }
+
+        if (raio == 0) {
+            limpaTela();
+            alert ("A bolinha sumiu!")
+            raio = 20;
+        }
+
+        if (raio > 200) {
+            limpaTela();
+            alert (" bolinha explodiu!");
+            raio = 20;
+        }
+    }
+
+    document.onkeydown = leDoTeclado;
+</script>
+</html>
